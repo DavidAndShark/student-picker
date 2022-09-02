@@ -1,182 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" 
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/confetti.js"></script>
+  <script defer src="./js/app.js"></script>
+  <link rel="icon" href="./assets/favicon.png" type="image/png">
   <title>Pick-A-Student</title>
-  <style>
-    body {
-      font-family: Helvetica;
-      font-weight: lighter;
-      font-size: 20px;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #container {
-      text-align: center;
-    }
-    ul li:first-child {
-      font-size: 50px;
-      color: green;
-      margin-bottom: 15px;
-    }
-    li {
-      list-style: none;
-      animation: twirl 1s;
-    }
-    @keyframes twirl {
-      0% {
-        transform-origin: center;
-        transform: rotate3d(0,0,1,-200deg);
-        opacity: 0;
-      }
-      100% {
-        transform-origin: center;
-        transform: none;
-        opacity: 1;
-      }
-    }
-    button {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      font-size: 20px;
-      padding: 20px;
-    }
-    select {
-      margin-top: 5px;
-      margin-left: 5px;
-      font-size: 20px;
-    }
-    label {
-      position: fixed;
-      top: 10px;
-      right: 15px;
-      font-size: 20px;
-      font-weight: 400;
-    }
-  </style>
-
 </head>
-
 <body>
-  <button id="pick">Next SEI<br>Contestant</button>
-  <label>Squad <select></select></label>
+  <button id="pick-btn" class="draw">Next<br>Contestant!</button>
+  <label>Location <select><option value="ALL">-ALL-</option></select></label>
   <div id="container">
+    <img id="img" alt="">
     <ul id="picked"></ul>
   </div>
-
-  <script type="text/javascript">
-    const re = /\((.+)\)/;
-
-    const students = [
-      'Amanda (BOS)',
-      'Ana (BOS)',
-      'Anchi (BOS)',
-      'Andrew (ATX)',
-      'Ashlee (HOU)',
-      'Bren (Little Rock)',
-      'Carol (NYC)',
-      'Carolina (HOU)', 
-      'Chris E (BOS)',
-      'Chris M (MEM)',
-      'Chris S (NYC)',
-      'Colby (BOS)',
-      'Ebba (CHI)',
-      'Eduardo (CHI)',
-      'Eric (VA)',
-      'Angelo (LA)',
-      'George (ATL)',
-      'Greg (NYC)',
-      'James (CHI)',
-      'Jenn (ATL)',
-      'Jess (NJ)',
-      'Jesse (Reno)',
-      'Jessica (CHI)',
-      'John (BOS)',
-      'Julian (MIA)',
-      'Karen (ATL)',
-      'Kristin (HOU)',
-      'Lauren (Charlotte)',
-      'Ledio (NYC)',
-      'Leon (HOU)',
-      'Lily (NYC)',
-      'Lindsay (Austin)',
-      'Luigi (NYC)',
-      'Maddie (Columbus)',
-      'Malcolm (NYC)',
-      'Marcus (PHI)',
-      'Mariah (MIA)',
-      'Mike (Leander)',
-      'Mohamed (WDB)',
-      'Nate (BOS)',
-      'Naveen (DAL)',
-      'Patrick (San Antonio)',
-      'Rachel (DAL)',
-      'Rinhard (ATL)',
-      'Ryan (DFW)',
-      'Samir (Ecuador)',
-      'Shaniya (DAL)',
-      'Steph (NJ)',
-      'Suleyma (CHI)',
-      'Tal (BOS)',
-      'Tia (FL)',
-      'Tiffany (DET)',
-      'Zain (NYC)',
-      'Zeus (DET)'
-    ];
-
-    let first, filteredStudents;
-
-    const pickedList = document.getElementById('picked');
-    const selectEl = document.querySelector('select');
-
-    document.getElementById('pick').addEventListener('click', function () {
-      if (filteredStudents.length) {
-        let contestant = filteredStudents.splice(Math.floor(Math.random() * filteredStudents.length), 1);
-        let li = document.createElement('li');
-        li.innerHTML = contestant;
-        if (first) {
-          pickedList.firstElementChild.remove();
-          pickedList.appendChild(li);
-          first = false;
-        } else {
-          pickedList.insertBefore(li, pickedList.firstElementChild);
-        }
-      } else {
-        refreshStudents();
-      }
-    });
-
-    selectEl.addEventListener('change', refreshStudents);
-
-    function refreshStudents() {
-      let campus = selectEl.value;
-      filteredStudents =  campus === 'ALL' ?
-        students.slice() : students.filter(s => s.includes(`(${campus})`));
-      pickedList.innerHTML = "<li>Who's First?</li>";
-      first = true;
-    }
-
-    function init() {
-      let campuses = Object.keys(students.reduce(function (obj, s) {
-        obj[re.exec(s)[1]] = true;
-        return obj;
-      }, {}));
-      selectEl.innerHTML = '<option value="ALL">-ALL-</option>';
-      campuses.forEach(function (c) {
-        selectEl.innerHTML += `<option value="${c}">${c}</option>`;
-      });
-      refreshStudents();
-    }
-
-    init();
-
-  </script>
-
 </body>
-
 </html>
