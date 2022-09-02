@@ -94,18 +94,12 @@ function handlePickBtnClick(evt) {
       pickedList.firstElementChild.remove()
       pickedList.appendChild(li)
       first = false
-
     } else {
       pickedList.insertBefore(li, pickedList.firstElementChild)
     }
     confetti.start(1000)
-    profile.setAttribute(
-      "src",
-      `https://github.com/${contestant.ghUser}.png`
-    )
-    if (!filteredStudents.length) {
-      pickBtn.innerHTML = `That's all!<br />Reset?`
-    }
+    profile.setAttribute('src', `https://github.com/${contestant.ghUser}.png`)
+    if (!filteredStudents.length) pickBtn.innerHTML = `That's all!<br />Reset?`
   } else {
     buildStudents()
   }
@@ -119,10 +113,7 @@ function buildStudents() {
       : students.filter(student => student.loc.includes(`${selLoc}`))
   pickedList.innerHTML = "<li>Who's First?</li>"
   first = true
-  profile.setAttribute(
-    "src",
-    ""
-  )
+  profile.setAttribute('src', '')
   pickBtn.innerHTML = `Next<br>Contestant!`
 }
 
