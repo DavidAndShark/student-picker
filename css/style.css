@@ -65,6 +65,10 @@ select {
     'Helvetica Neue', sans-serif;
 }
 
+select:hover {
+  cursor: pointer;
+}
+
 label {
   position: fixed;
   top: 10px;
@@ -86,6 +90,10 @@ button {
   background: none;
   box-shadow: inset 0 0 0 2px #9AA5B1;
   color: #E4E7EB;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 button::before, button::after {
