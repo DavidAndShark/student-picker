@@ -14,7 +14,6 @@ const students = [
   { studentName: 'Ebba', loc: 'CHI', squad: '', ghUser: 'EbbaSchmid' },
   { studentName: 'Eduardo', loc: 'CHI', squad: '', ghUser: 'edumana' },
   { studentName: 'Eric', loc: 'VA', squad: '', ghUser: 'EricSokolowski' },
-  { studentName: 'George', loc: 'ATL', squad: '', ghUser: 'geopan1521' },
   { studentName: 'Greg', loc: 'NYC', squad: '', ghUser: 'gfou20' },
   { studentName: 'James', loc: 'CHI', squad: '', ghUser: 'jhudson357' },
   { studentName: 'Jenn', loc: 'ATL', squad: '', ghUser: 'J3NNog1' },
