@@ -30,7 +30,6 @@ const students = [
   { studentName: 'Luigi', loc: 'NYC', squad: '', ghUser: 'KnucklesLT' },
   { studentName: 'Maddie', loc: 'CBUS', squad: '', ghUser: 'mbstevenson96' },
   { studentName: 'Marcus', loc: 'PHI', squad: '', ghUser: 'hymanrcus' },
-  { studentName: 'Mariah', loc: 'MIA', squad: '', ghUser: 'Primemerlinian' },
   { studentName: 'Mike', loc: 'ATX', squad: '', ghUser: 'hieptrinh96' },
   { studentName: 'Nate', loc: 'BOS', squad: '', ghUser: 'NateMorgan' },
   { studentName: 'Naveen', loc: 'DAL', squad: '', ghUser: 'mrunlockedtech-odin' },
