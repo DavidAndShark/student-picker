@@ -6,7 +6,6 @@ const students = [
   { studentName: 'Cody', loc: 'East', squad: '', ghUser: 'Codykilpatrick' },
   { studentName: 'Danielle', loc: 'East', squad: '', ghUser: 'DanielleColucci' },
   { studentName: 'Dayana', loc: 'East', squad: '', ghUser: 'dayanalittle' },
-  { studentName: 'Devorius', loc: 'East', squad: '', ghUser: 'Devorius23' },
   { studentName: 'Dhruvin', loc: 'East', squad: '', ghUser: 'dhruvin0777' },
   { studentName: 'Drew', loc: 'East', squad: '', ghUser: 'dneece522' },
   { studentName: 'Emmanuel', loc: 'East', squad: '', ghUser: 'epsilonswisdom' },
