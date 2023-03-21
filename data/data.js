@@ -52,6 +52,6 @@ const students = [
   { studentName: 'Suzanne', loc: 'Ben', squad: '', ghUser: 'strammel33' },
   { studentName: 'Trenton', loc: 'Ben', squad: '', ghUser: 'trentonwahr' },
 ]
-]
+
 
 export { students }
